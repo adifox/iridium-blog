@@ -1,0 +1,8 @@
+{
+  "storyblok": {
+    "endpoints": {
+      "storiesURL": "cdn/stories/"
+    },
+    "options": {}
+  }
+}

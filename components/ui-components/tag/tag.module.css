@@ -1,0 +1,10 @@
+.tagContainer {
+  display: flex;
+  width: min-content;
+  color: #293241;
+  font-weight: 600;
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid #888;
+  border-radius: 5px;
+}

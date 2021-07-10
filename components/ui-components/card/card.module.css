@@ -1,0 +1,48 @@
+.cardWrapper {
+  width: 340px;
+  height: 455px;
+  margin: 1rem;
+}
+.cardWrapper p,
+.cardWrapper h1,
+.cardWrapper h2 {
+  margin: 0;
+}
+.imageContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.image {
+  max-width: 100%;
+}
+.textContent {
+  width: 100%;
+  padding: 0 5px;
+}
+.cardMeta {
+  display: flex;
+  align-items: center;
+  margin: 30px 0px 10px 0px;
+  font-size: 14px;
+}
+.textWrapper {
+  height: 55px;
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.textWrapper p {
+  color: #888;
+}
+.titleWrapper {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
