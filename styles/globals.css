@@ -8,6 +8,18 @@ body {
   color: #293241;
 }
 
+@font-face {
+  font-family: 'Recoleta';
+  src: url('/fonts/Recoleta-Black.eot');
+  src: local('Recoleta Black'), local('Recoleta-Black'),
+    url('/fonts/Recoleta-Black.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Recoleta-Black.woff2') format('woff2'),
+    url('/fonts/Recoleta-Black.woff') format('woff'),
+    url('/fonts/Recoleta-Black.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -15,6 +27,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-family: Recoleta;
 }
 
 .fa {
