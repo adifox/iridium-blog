@@ -1,6 +1,9 @@
 import { getStoryblokData } from '../../utils/storyblok'
 import CONFIG from '../../config.json'
 
+// Components
+import ArticleRenderer from '../../components/article-renderer'
+
 const {
   storyblok: {
     endpoints: { storiesURL: URL },
@@ -10,7 +13,7 @@ const {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [{ params: { article: 'first-post' } }],
+    paths: [{ params: { article: 'my-first-post' } }],
     fallback: true,
   }
 }
@@ -19,20 +22,23 @@ export const getStaticProps = async (context) => {
   const {
     params: { article },
   } = context
-  const data = await getStoryblokData(`${URL}/articles/${article}`, options)
+  const articleContent = await getStoryblokData(
+    `${URL}/articles/${article}`,
+    options
+  )
 
   return {
-    props: { data },
+    props: { articleContent },
   }
 }
 
-const Article = ({ data }) => {
-  console.log('THE ARTICLE DATA:', data)
-  return (
-    <div>
-      <h1>Article content</h1>
-    </div>
-  )
+const Article = ({ articleContent }) => {
+  let article = null
+  if (articleContent && articleContent.data) {
+    article = <ArticleRenderer article={articleContent.data} />
+  }
+
+  return article
 }
 
 export default Article

@@ -1,17 +1,15 @@
 // Styles
 import styles from './hero.module.css'
 
-const Hero = () => {
+const Hero = ({ blok }) => {
+  const { headline, subtitle } = blok
   return (
     <div className={styles.heroWrapper}>
       <div className={styles.heroContainer}>
         <div className={styles.heroContent}>
           <div className={styles.heroTitles}>
-            <h1 className={styles.title}>Welcome to the Iridium Blog</h1>
-            <h2>
-              Sharing with you my experience about software development.
-              Let&apos;s keep it simple.
-            </h2>
+            <h1 className={styles.title}>{headline}</h1>
+            <h2>{subtitle}</h2>
             {/* <p className={styles.description}>
           Trying to make you understand the world of{' '}
           <code className={styles.code}>coding</code>

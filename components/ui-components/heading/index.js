@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Heading = ({ title, level, article }) => {
+const Heading = ({ title, level, slug }) => {
   let elementTitle
   switch (level) {
     case 'l2':
@@ -23,10 +23,9 @@ const Heading = ({ title, level, article }) => {
   }
 
   let content = elementTitle
-  if (article) {
-    const urlTitle = title.replace(/\s/g, '-')
+  if (slug) {
     content = (
-      <Link href='/article/[article]' as={`/article/${urlTitle}`}>
+      <Link href='/articles/[article]' as={`/articles/${slug}`}>
         <a>{elementTitle}</a>
       </Link>
     )

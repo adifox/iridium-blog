@@ -9,7 +9,7 @@ import Tag from '../tag'
 import DateTag from '../date-tag'
 import Heading from '../heading'
 
-const Card = ({ image, title, subtitle, description, postId }) => {
+const Card = ({ image, title, subtitle, description, slug }) => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.imageContainer}>
@@ -27,7 +27,7 @@ const Card = ({ image, title, subtitle, description, postId }) => {
           <DateTag date={'2 Marzo, 2021'} />
         </div>
         <div className={styles.titleWrapper}>
-          <Heading title={title} level={'l2'} article />
+          <Heading title={title} level={'l2'} slug={slug} />
         </div>
         {subtitle && <h3>{subtitle}</h3>}
         {description && (

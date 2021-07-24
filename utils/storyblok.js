@@ -8,6 +8,10 @@ const Storyblok = new StoryblokClient({
   },
 })
 
+export const getCacheVersion = async () => {
+  return Storyblok.get('cdn/spaces/me', {})
+}
+
 export const getStoryblokData = async (url, options) => {
   const data = await Storyblok.get(url, options)
   return data
