@@ -1,0 +1,28 @@
+.mainWrapper {
+  width: 100%;
+  margin-top: 8rem;
+}
+.contentWrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 4rem;
+}
+.image {
+  width: 1200px;
+  height: 400px;
+}
+.title {
+  line-height: 1.15;
+  font-size: 4rem;
+}
+.articleBody p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+@media (max-width: 600px) {
+  .contentWrapper {
+    padding: 0 1rem;
+  }
+}
