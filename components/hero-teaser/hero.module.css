@@ -23,9 +23,9 @@
   max-width: 40rem;
   align-items: center;
 }
-.heroImageContainer img {
+/* .heroImageContainer img {
   max-height: 20rem;
-}
+} */
 .heroTitles {
   padding-top: 4rem;
   padding-left: 4rem;

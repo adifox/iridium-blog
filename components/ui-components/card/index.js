@@ -1,10 +1,8 @@
-import Image from 'next/image'
-
 // Styles
 import styles from './card.module.css'
 
 // Components
-// import Image from '../image'
+import ImageWrapper from '../image-wrapper'
 import Tag from '../tag'
 import DateTag from '../date-tag'
 import Heading from '../heading'
@@ -13,11 +11,13 @@ const Card = ({ image, title, subtitle, description, slug }) => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.imageContainer}>
-        <img
+        <ImageWrapper
           src={image.src}
           alt={image.alt}
-          styles={styles.image}
-          // layout='fill'
+          width={340}
+          height={220}
+          external
+          priority={true}
         />
       </div>
       <div className={styles.textContent}>

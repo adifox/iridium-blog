@@ -1,5 +1,10 @@
+import Image from 'next/image'
+
 // Styles
 import styles from './hero.module.css'
+
+// Components
+import ImageWrapper from '../ui-components/image-wrapper'
 
 const Hero = ({ blok }) => {
   const { headline, subtitle } = blok
@@ -19,10 +24,12 @@ const Hero = ({ blok }) => {
         </Link> */}
           </div>
           <div className={styles.heroImageContainer}>
-            <img
-              className={styles.heroPic}
+            <ImageWrapper
               src='/images/coding.png'
               alt='code with iridium-blog'
+              height={300}
+              width={300}
+              priority={true}
             />
           </div>
         </div>
