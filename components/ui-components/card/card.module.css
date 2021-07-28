@@ -26,8 +26,12 @@
 .cardMeta {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 30px 0px 10px 0px;
   font-size: 14px;
+}
+.tagsWrapper {
+  display: flex;
 }
 .textWrapper {
   height: 55px;

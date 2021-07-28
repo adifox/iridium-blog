@@ -11,14 +11,19 @@
   width: 1200px;
   height: 400px;
 }
-.title {
+.titleStyles {
   line-height: 1.15;
   font-size: 4rem;
 }
-.articleBody p {
+.articleBodyStyles p {
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
+}
+.socialBox {
+  width: 100%;
+  border-top: 1px solid #293241;
+  margin: 2rem 0;
 }
 
 @media (max-width: 600px) {

@@ -58,13 +58,13 @@
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
-@media (max-width: 600px) {
-  .heroWrapper {
-    /* -webkit-mask-size: 33.37% 183%;
-    mask-size: 33.37% 140%; */
-    /* border-bottom-left-radius: 50% 10%;
-    border-bottom-right-radius: 50% 10%; */
-  }
+@media (max-width: 700px) {
+  /* .heroWrapper {
+    -webkit-mask-size: 33.37% 183%;
+    mask-size: 33.37% 140%;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+  } */
   .heroTitles {
     padding: 0;
   }
@@ -75,5 +75,10 @@
   .heroContainer {
     width: 100vw;
     padding: 1rem 0.5rem;
+  }
+}
+@media only screen and (max-width: 1003px) and (min-width: 700px) {
+  .heroImageContainer {
+    display: none;
   }
 }

@@ -7,32 +7,54 @@ import Tag from '../tag'
 import DateTag from '../date-tag'
 import Heading from '../heading'
 
-const Card = ({ image, title, subtitle, description, slug }) => {
+const {
+  cardWrapper,
+  imageContainer,
+  textContent,
+  cardMeta,
+  tagsWrapper,
+  titleWrapper,
+  textWrapper,
+} = styles
+
+const Card = ({ story, subtitle }) => {
+  const {
+    content: { image, title, intro },
+    name,
+    slug,
+    first_published_at,
+    tag_list,
+  } = story
+
+  let articleTags =
+    tag_list.length > 0
+      ? tag_list.map((tag, i) => <Tag tagTitle={tag} key={i} />)
+      : null
+
   return (
-    <div className={styles.cardWrapper}>
-      <div className={styles.imageContainer}>
+    <div className={cardWrapper}>
+      <div className={imageContainer}>
         <ImageWrapper
-          src={image.src}
-          alt={image.alt}
+          src={image}
+          alt={name}
           width={340}
           height={220}
           external
           priority={true}
         />
       </div>
-      <div className={styles.textContent}>
-        <div className={styles.cardMeta}>
-          <Tag tagTitle={'React'} />
-          <Tag tagTitle={'JavaScript'} />
-          <DateTag date={'2 Marzo, 2021'} />
+      <div className={textContent}>
+        <div className={cardMeta}>
+          <div className={tagsWrapper}>{articleTags}</div>
+          <DateTag date={first_published_at} />
         </div>
-        <div className={styles.titleWrapper}>
+        <div className={titleWrapper}>
           <Heading title={title} level={'l2'} slug={slug} />
         </div>
         {subtitle && <h3>{subtitle}</h3>}
-        {description && (
-          <div className={styles.textWrapper}>
-            <p>{description}</p>
+        {intro && (
+          <div className={textWrapper}>
+            <p>{intro}</p>
           </div>
         )}
       </div>
