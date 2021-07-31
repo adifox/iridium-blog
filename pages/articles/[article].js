@@ -13,7 +13,7 @@ const {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [{ params: { article: 'my-first-post' } }],
+    paths: [{ params: { article: 'welcome-to-my-blog' } }],
     fallback: true,
   }
 }
