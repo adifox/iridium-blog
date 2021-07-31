@@ -31,15 +31,16 @@
   margin: 0 auto;
   padding: 0 4rem;
 }
-:is(.logoWrapper, .logoWrapper a) {
+/* :is(.logoWrapper, .logoWrapper a) {
   display: flex;
-}
-/* .logoWrapper {
+} */
+.logoWrapper {
   display: flex;
+  padding: 4px 0;
 }
 .logoWrapper a {
   display: flex;
-} */
+}
 .navSection {
   display: flex;
   font-size: 20px;

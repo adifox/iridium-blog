@@ -1,11 +1,13 @@
-import styles from './logo.module.css'
+// Components
+import ImageWrapper from '../image-wrapper'
 
-const Logo = ({ className }) => {
+const Logo = () => {
   return (
-    <img
-      className={className || styles.default}
-      src='/images/white-logo.png'
+    <ImageWrapper
+      src={'/images/white-logo.png'}
       alt='iridium blog logo'
+      width={55}
+      height={20}
     />
   )
 }
