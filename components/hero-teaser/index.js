@@ -32,8 +32,8 @@ const Hero = ({ blok }) => {
           preserveAspectRatio='none'
         >
           <rect width='100%' height='100%' fill='#356488' />
-          <circle fill='#f6f2ef' cx='0' cy='100' r='100' />
-          <circle fill='#f6f2ef' cx='200' cy='100' r='100' />
+          <circle fill='#FAFAFA' cx='0' cy='100' r='100' />
+          <circle fill='#FAFAFA' cx='200' cy='100' r='100' />
         </svg>
       </div>
     </div>

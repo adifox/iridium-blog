@@ -1,23 +1,24 @@
+@font-face {
+  font-family: 'Matter';
+  src: url('/fonts/Matter-Regular.eot');
+  src: local('Matter'), local('Matter-Regular'),
+    url('/fonts/Matter-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Matter-Regular.woff2') format('woff2'),
+    url('/fonts/Matter-Regular.woff') format('woff'),
+    url('/fonts/Matter-Regular.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #f6f2ef;
+  font-family: Matter;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  /* background-color: #f6f2ef; */
+  background-color: #fafafa;
   color: #293241;
-}
-
-@font-face {
-  font-family: 'Recoleta';
-  src: url('/fonts/Recoleta-Black.eot');
-  src: local('Recoleta Black'), local('Recoleta-Black'),
-    url('/fonts/Recoleta-Black.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Recoleta-Black.woff2') format('woff2'),
-    url('/fonts/Recoleta-Black.woff') format('woff'),
-    url('/fonts/Recoleta-Black.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
 }
 
 a {
@@ -30,7 +31,7 @@ a {
 }
 
 h1 {
-  font-family: Recoleta;
+  font-family: Matter;
 }
 
 .fa {

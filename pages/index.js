@@ -10,12 +10,14 @@ import styles from '../styles/Home.module.css'
 
 const { container, main, grid } = styles
 
-const Home = ({ storyblokData, articles }) => {
-  const { stories } = articles.data
-  const content = stories
-    ? stories.map((story) => {
-        return <Card key={story.content._uid} story={story} />
-      })
+const Home = ({ storyblokData, selectedArticles }) => {
+  const frontPageArticles = selectedArticles
+    ? selectedArticles.map((article) => (
+        <Card
+          key={article.data.story.content._uid}
+          story={article.data.story}
+        />
+      ))
     : null
 
   let heroContent = null
@@ -31,14 +33,13 @@ const Home = ({ storyblokData, articles }) => {
         <title>Iridium Blog - Home</title>
         <meta
           name='description'
-          content='The Iridium Blog, stories about tech and live.'
+          content='The Iridium Blog, stories about tech and live. By Szabolcs Lukacs'
         />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={container}>
         {heroContent}
         <div className={main}>
-          <div className={grid}>{content}</div>
+          <div className={grid}>{frontPageArticles}</div>
         </div>
       </main>
     </>
@@ -51,12 +52,34 @@ export const getStaticProps = async (context) => {
     cv: response.data.space.version,
     version: 'published',
   })
-  const articles = await getStoryblokData('cdn/stories', {
-    starts_with: 'articles/',
-  })
 
+  let articleList = []
+  storyblokData.data.story.content.body.forEach((bodyElement) =>
+    bodyElement.component === 'articleList'
+      ? (articleList = [...bodyElement.article_title])
+      : null
+  )
+
+  const getSelectedArticle = async (id) => {
+    const response = await getStoryblokData(`cdn/stories/${id}`, {
+      find_by: 'uuid',
+    })
+
+    return response
+  }
+
+  let selectedArticles = null
+  if (articleList.length !== 0) {
+    selectedArticles = await Promise.all([
+      ...articleList.map((id) => getSelectedArticle(id)),
+    ])
+  }
+
+  // const articles = await getStoryblokData('cdn/stories', {
+  //   starts_with: 'articles/',
+  // })
   return {
-    props: { storyblokData, articles },
+    props: { storyblokData, selectedArticles },
   }
 }
 

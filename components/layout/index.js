@@ -12,14 +12,19 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>Iridium Blog</title>
+        <meta name='viewport' content='initial-scale=1, width=device-width' />
         <link rel='icon' href='/favicon.ico' />
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
         />
         <link
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/icon?family=Material+Icons'
+        />
+        <link
           rel='preload'
-          href='/fonts/Recoleta-Black.ttf'
+          href='/fonts/Matter-Regular.ttf'
           as='font'
           crossOrigin=''
         />

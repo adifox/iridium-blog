@@ -1,4 +1,4 @@
-const StoryblokClient = require('storyblok-js-client')
+import StoryblokClient from 'storyblok-js-client'
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
@@ -15,4 +15,10 @@ export const getCacheVersion = async () => {
 export const getStoryblokData = async (url, options) => {
   const data = await Storyblok.get(url, options)
   return data
+}
+
+export const renderRichtext = (content) => {
+  return {
+    __html: Storyblok.richTextResolver.render(content),
+  }
 }

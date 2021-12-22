@@ -26,7 +26,7 @@ const Header = () => {
         <nav className={styles.navSection}>
           <ul className={styles.ulStyle}>
             <li className={styles.articles}>
-              <Link href='/article'>Articles</Link>
+              <Link href='/articles'>Articles</Link>
             </li>
             <li className={styles.about}>
               <Link href='/aboutme'>About me</Link>
