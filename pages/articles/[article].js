@@ -33,7 +33,6 @@ export const getStaticProps = async (context) => {
 }
 
 const Article = ({ articleContent }) => {
-  console.log('ARTICLE CONTENT:', articleContent)
   let article = null
   if (articleContent && articleContent.data) {
     article = <ArticleRenderer article={articleContent.data} />

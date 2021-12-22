@@ -28,7 +28,6 @@ const {
 } = styles
 
 const ArticleRenderer = ({ article }) => {
-  // console.log('THE ARTICLE:', article)
   const {
     content: { image, intro, title, bodyText },
     tag_list,

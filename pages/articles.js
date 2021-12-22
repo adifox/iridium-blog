@@ -10,8 +10,6 @@ import styles from '../styles/Home.module.css'
 const { container, main, grid } = styles
 
 const Articles = ({ articles }) => {
-  console.log('THE FANTASTIC ARTICLES:', articles)
-
   const allTheArticles = articles?.data?.stories
     ? articles.data.stories.map((article) => (
         <Card key={article.uuid} story={article} />
