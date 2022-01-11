@@ -33,6 +33,7 @@
 .heroImageContainer {
   padding-top: 1rem;
   padding-right: 4rem;
+  overflow: overlay;
 }
 .heroTitles h2 {
   font-weight: 400;

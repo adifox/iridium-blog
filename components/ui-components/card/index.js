@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 // Styles
 import styles from './card.module.css'
 
@@ -33,31 +35,35 @@ const Card = ({ story, subtitle }) => {
 
   return (
     <div className={cardWrapper}>
-      <div className={imageContainer}>
-        <ImageWrapper
-          src={image}
-          alt={name}
-          width={340}
-          height={220}
-          external
-          priority={true}
-        />
-      </div>
-      <div className={textContent}>
-        <div className={cardMeta}>
-          <div className={tagsWrapper}>{articleTags}</div>
-          <DateTag date={first_published_at} />
-        </div>
-        <div className={titleWrapper}>
-          <Heading title={title} level={'l2'} slug={slug} />
-        </div>
-        {subtitle && <h3>{subtitle}</h3>}
-        {intro && (
-          <div className={textWrapper}>
-            <p>{intro}</p>
+      <Link href='/articles/[article]' as={`/articles/${slug}`}>
+        <a>
+          <div className={imageContainer}>
+            <ImageWrapper
+              src={image}
+              alt={name}
+              width={340}
+              height={220}
+              external
+              priority={true}
+            />
           </div>
-        )}
-      </div>
+          <div className={textContent}>
+            <div className={cardMeta}>
+              <div className={tagsWrapper}>{articleTags}</div>
+              <DateTag date={first_published_at} />
+            </div>
+            <div className={titleWrapper}>
+              <Heading title={title} level={'l2'} />
+            </div>
+            {subtitle && <h3>{subtitle}</h3>}
+            {intro && (
+              <div className={textWrapper}>
+                <p>{intro}</p>
+              </div>
+            )}
+          </div>
+        </a>
+      </Link>
     </div>
   )
 }
