@@ -12,16 +12,10 @@ const Hero = ({ blok }) => {
         <div className={styles.heroContent}>
           <div className={styles.heroTitles}>
             <h1 className={styles.title}>{headline}</h1>
-            <h2>{subtitle}</h2>
+            <h2 className={styles.description}>{subtitle}</h2>
           </div>
           <div className={styles.heroImageContainer}>
-            <div
-              style={{
-                borderRadius: '56% 44% 70% 30% / 62% 47% 53% 38%',
-                background: '#fafafa',
-                padding: '50px',
-              }}
-            >
+            <div className={styles.imageWrapper}>
               <ImageWrapper
                 src='/images/coding.png'
                 alt='code with iridium-blog'

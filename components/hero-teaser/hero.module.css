@@ -17,6 +17,7 @@
   max-width: 1200px;
   justify-content: space-between;
   width: 100%;
+  padding: 1rem;
 }
 .heroImageContainer,
 .heroTitles {
@@ -27,12 +28,14 @@
   max-height: 20rem;
 } */
 .heroTitles {
-  padding-top: 4rem;
-  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .heroImageContainer {
-  padding-top: 1rem;
-  padding-right: 4rem;
+  /* padding-top: 1vw; */
+  /* padding-right: 4rem; */
+  padding: 1vw 0;
   overflow: overlay;
 }
 .heroTitles h2 {
@@ -43,30 +46,85 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
 }
-
 .description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+  line-height: 1;
+  font-size: 1rem;
+}
+.imageWrapper {
+  border-radius: 58% 42% 59% 41% / 50% 54% 46% 50%;
+  background: #fafafa;
+  padding: 20px;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Matter;
-  /* font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace; */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .heroTitles {
+    max-width: 350px;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+  .heroContent {
+    flex-wrap: nowrap;
+    padding: 0 4rem;
+  }
 }
-@media (max-width: 700px) {
-  /* .heroWrapper {
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+  .imageWrapper {
+    /* border-radius: 58% 42% 67% 33% / 71% 90% 10% 29%; */
+    padding: 40px;
+  }
+  .heroTitles {
+    max-width: 450px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .title {
+    font-size: 3rem;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+  /* .heroTitles {
+    max-width: 450px;
+  } */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .imageWrapper {
+    padding: 50px;
+  }
+  .heroTitles {
+    max-width: 600px;
+  }
+  .title {
+    font-size: 4rem;
+  }
+}
+
+/* @media (max-width: 700px) {
+  .heroWrapper {
     -webkit-mask-size: 33.37% 183%;
     mask-size: 33.37% 140%;
     border-bottom-left-radius: 50% 10%;
     border-bottom-right-radius: 50% 10%;
-  } */
+  }
   .heroTitles {
     padding: 0;
   }
@@ -78,9 +136,9 @@
     width: 100vw;
     padding: 1rem 0.5rem;
   }
-}
-@media only screen and (max-width: 1003px) and (min-width: 700px) {
+} */
+/* @media only screen and (max-width: 1003px) and (min-width: 700px) {
   .heroImageContainer {
     display: none;
   }
-}
+} */
