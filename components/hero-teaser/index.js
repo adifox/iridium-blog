@@ -1,26 +1,36 @@
+// Components
+import ImageWrapper from '../ui-components/image-wrapper'
 // Styles
 import styles from './hero.module.css'
 
-// Components
-import ImageWrapper from '../ui-components/image-wrapper'
+const {
+  heroWrapper,
+  heroContainer,
+  heroContent,
+  heroTitles,
+  title,
+  description,
+  heroImageContainer,
+  imageWrapper,
+} = styles
 
 const Hero = ({ blok }) => {
   const { headline, subtitle } = blok
   return (
-    <div className={styles.heroWrapper}>
-      <div className={styles.heroContainer}>
-        <div className={styles.heroContent}>
-          <div className={styles.heroTitles}>
-            <h1 className={styles.title}>{headline}</h1>
-            <h2 className={styles.description}>{subtitle}</h2>
+    <div className={heroWrapper}>
+      <div className={heroContainer}>
+        <div className={heroContent}>
+          <div className={heroTitles}>
+            <h1 className={title}>{headline}</h1>
+            <h2 className={description}>{subtitle}</h2>
           </div>
-          <div className={styles.heroImageContainer}>
-            <div className={styles.imageWrapper}>
+          <div className={heroImageContainer}>
+            <div className={imageWrapper}>
               <ImageWrapper
                 src='/images/coding.png'
                 alt='code with iridium-blog'
-                height={300}
-                width={300}
+                height={250}
+                width={250}
                 priority={true}
               />
             </div>
@@ -32,11 +42,7 @@ const Hero = ({ blok }) => {
           marginTop: '-5px',
         }}
       >
-        <svg
-          viewBox='0 0 500 150'
-          preserveAspectRatio='none'
-          style={{ width: '100%' }}
-        >
+        <svg viewBox='0 0 500 150' preserveAspectRatio='none'>
           <path
             d='M-1.12,69.58 C143.90,181.09 304.17,-18.23 500.56,102.14 L500.00,0.00 L0.00,0.00 Z'
             style={{ stroke: 'none', fill: '#356488' }}
