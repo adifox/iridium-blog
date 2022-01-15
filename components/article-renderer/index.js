@@ -99,8 +99,8 @@ const ArticleRenderer = ({ article }) => {
           <Image
             src={`https:${image}`}
             alt='code with iridium-blog'
-            width={1200}
-            height={600}
+            width={1280}
+            height={720}
           />
         </div>
         <div>Image Source</div>
