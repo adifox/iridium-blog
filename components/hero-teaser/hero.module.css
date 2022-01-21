@@ -2,13 +2,24 @@
   color: #fff;
   width: 100vw;
 }
-.heroWrapper svg {
+/* .heroWrapper svg {
   width: 100%;
   height: 120px;
-}
+} */
 .heroContainer {
   background-color: #356488;
   width: 100%;
+  position: relative;
+}
+.heroContainerIllustration1 {
+  background-image: url('/images/cherry-434.png');
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  /* background-position: bottom right; */
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  position: absolute;
 }
 .heroContent {
   display: flex;
@@ -17,7 +28,8 @@
   max-width: 1200px;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem;
+  height: 650px;
+  padding-top: 4.5rem;
 }
 .heroImageContainer,
 .heroTitles {
@@ -27,12 +39,16 @@
 .heroTitles {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  order: 2;
+  padding: 0 32px;
+  /* justify-content: flex-end; */
 }
 .heroImageContainer {
-  padding: 1vw 0;
+  /* padding: 1vw 0; */
   overflow: overlay;
   margin: 0 auto;
+  order: 1;
+  /* justify-content: center; */
 }
 .heroTitles h2 {
   font-weight: 400;
@@ -54,16 +70,46 @@
   padding: 30px;
 }
 
+.customShapeDividerBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  bottom: -45px;
+}
+
+.customShapeDividerBottom svg {
+  position: relative;
+  display: block;
+  width: calc(142% + 1.3px);
+  height: 116px;
+}
+
+.shapeFill {
+  fill: #fafafa;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .heroTitles {
     max-width: 350px;
+    align-items: flex-start;
+    order: 1;
   }
   .title {
     font-size: 3rem;
   }
   .heroContent {
     flex-wrap: nowrap;
+    height: 450px;
+    padding-top: 6rem;
+    order: 2;
+  }
+  .heroImageContainer {
+    display: flex;
+    align-items: flex-start;
   }
 }
 
@@ -81,9 +127,11 @@
   }
   .heroTitles {
     max-width: 450px;
+    justify-content: flex-start;
   }
   .heroContent {
-    padding: 0 4rem;
+    padding: 5rem 4rem 0 4rem;
+    height: 430px;
   }
   .heroImageContainer {
     margin: 0;
@@ -99,7 +147,12 @@
     font-size: 1.5rem;
   }
   .heroContent {
-    padding: 0 8rem;
+    padding: 5rem 8rem 0 8rem;
+  }
+  .heroContainerIllustration1 {
+    background-size: 30vw;
+    background-repeat: repeat;
+    background-position: center;
   }
 }
 

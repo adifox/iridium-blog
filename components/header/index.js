@@ -13,36 +13,45 @@ const Header = () => {
   const modalBackgroundStyles = isMenuOpen
     ? styles.modalBackground
     : styles.closeModalBackground
+  const headerWrapperStyles = isMenuOpen
+    ? styles.headerWrapperOpen
+    : styles.headerWrapper
   return (
-    <header className={styles.headerWrapper}>
-      <div className={styles.headerContainer}>
-        <div className={styles.logoWrapper}>
-          <Link href='/'>
-            <a>
-              <Logo />
-            </a>
-          </Link>
-        </div>
-        <nav className={styles.navSection}>
-          <ul className={styles.ulStyle}>
-            <li className={styles.articles}>
-              <Link href='/articles'>Articles</Link>
-            </li>
-            <li className={styles.about}>
-              <Link href='/aboutme'>About me</Link>
-            </li>
-            {/* <li>
+    <>
+      <header className={headerWrapperStyles}>
+        <div className={styles.headerContainer}>
+          <div className={styles.logoWrapper}>
+            <Link href='/'>
+              <a>
+                <Logo />
+              </a>
+            </Link>
+          </div>
+          <nav className={styles.navSection}>
+            <ul className={styles.ulStyle}>
+              <li className={styles.articles}>
+                <Link href='/articles'>Articles</Link>
+              </li>
+              <li className={styles.about}>
+                <Link href='/aboutme'>About me</Link>
+              </li>
+              {/* <li>
               <Link href='/iridium'>Why Iridium?</Link>
             </li> */}
-          </ul>
-        </nav>
-        <button
-          className={styles.menuButton}
-          onClick={() => setMenuOpen(!isMenuOpen)}
-        >
-          <i className='fa fa-bars'></i>
-        </button>
-      </div>
+            </ul>
+          </nav>
+          <button
+            className={styles.menuButton}
+            onClick={() => setMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <i className='fa fa-close'></i>
+            ) : (
+              <i className='fa fa-bars'></i>
+            )}
+          </button>
+        </div>
+      </header>
       <Modal
         className={modalStyle}
         onClickHandler={() => setMenuOpen(!isMenuOpen)}
@@ -53,19 +62,19 @@ const Header = () => {
               <Link href='/'>Home</Link>
             </li>
             <li>
-              <Link href='/article'>Articles</Link>
+              <Link href='/articles'>Articles</Link>
             </li>
             <li>
               <Link href='/aboutme'>About me</Link>
             </li>
-            <li>
-              <Link href='/iridium'>Why Iridium?</Link>
-            </li>
           </ul>
         </div>
+        <div
+          className={modalBackgroundStyles}
+          onClick={() => setMenuOpen(!isMenuOpen)}
+        ></div>
       </Modal>
-      <div className={modalBackgroundStyles}></div>
-    </header>
+    </>
   )
 }
 

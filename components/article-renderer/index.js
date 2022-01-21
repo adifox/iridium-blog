@@ -40,7 +40,7 @@ const ArticleRenderer = ({ article }) => {
       ? tag_list.map((tag, i) => {
           const CustomButton = styled(Button)({
             color: 'white',
-            backgroundColor: '#efd81d',
+            backgroundColor: '#A7CD24',
             marginLeft: '5px',
             '&:hover': {
               backgroundColor: '#edc31e',
