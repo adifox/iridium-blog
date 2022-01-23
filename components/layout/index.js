@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 
 // Components
@@ -8,6 +9,25 @@ import Footer from '../footer'
 import styles from './layout.module.css'
 
 const Layout = ({ children }) => {
+  const mainContentRef = useRef()
+  const [greenColorHeader, setGreenColorHeader] = useState(false)
+
+  const handleScroll = () => {
+    const contentPosition = mainContentRef.current.getBoundingClientRect().top
+    if (contentPosition < 0) {
+      setGreenColorHeader(true)
+    } else {
+      setGreenColorHeader(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  })
   return (
     <>
       <Head>
@@ -29,8 +49,10 @@ const Layout = ({ children }) => {
           crossOrigin=''
         />
       </Head>
-      <Header />
-      <div className={styles.mainContent}>{children}</div>
+      <Header greenColorHeader={greenColorHeader} />
+      <div className={styles.mainContent} ref={mainContentRef}>
+        {children}
+      </div>
       <Footer />
     </>
   )

@@ -1,5 +1,6 @@
 .headerWrapper,
-.headerWrapperOpen {
+.headerWrapperOpen,
+.greenBackground {
   display: flex;
   position: fixed;
   z-index: 120;
@@ -20,8 +21,10 @@
   border-style: solid;
   border-bottom-color: #eaeaea; */
 }
-.headerWrapperOpen {
-  background-color: #356488;
+.headerWrapperOpen,
+.greenBackground {
+  background-color: #a7cd24;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 }
 .headerContainer {
   /* width: 90vw; */
@@ -106,7 +109,7 @@
   width: 100vw;
   z-index: 1;
   color: #fff;
-  background-color: #356488;
+  background-color: #a7cd24;
   /* right: 0; */
   top: 4rem;
   /* border: 1px solid #eaeaea; */

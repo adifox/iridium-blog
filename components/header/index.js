@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // Components
 import Logo from '../ui-components/logo'
@@ -7,8 +8,9 @@ import Modal from '../ui-components/modal'
 
 import styles from './header.module.css'
 
-const Header = () => {
+const Header = ({ greenColorHeader }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
+  const router = useRouter()
   const modalStyle = isMenuOpen ? styles.headerModal : styles.closeHeaderModal
   const modalBackgroundStyles = isMenuOpen
     ? styles.modalBackground
@@ -16,9 +18,15 @@ const Header = () => {
   const headerWrapperStyles = isMenuOpen
     ? styles.headerWrapperOpen
     : styles.headerWrapper
+
+  let headerStyles = headerWrapperStyles
+  if (router.pathname !== '/' || greenColorHeader) {
+    headerStyles = styles.greenBackground
+  }
+
   return (
     <>
-      <header className={headerWrapperStyles}>
+      <header className={headerStyles}>
         <div className={styles.headerContainer}>
           <div className={styles.logoWrapper}>
             <Link href='/'>
@@ -56,7 +64,10 @@ const Header = () => {
         className={modalStyle}
         onClickHandler={() => setMenuOpen(!isMenuOpen)}
       >
-        <div className={styles.mobileMenu}>
+        <div
+          className={styles.mobileMenu}
+          onClick={() => setMenuOpen(!isMenuOpen)}
+        >
           <ul>
             <li>
               <Link href='/'>Home</Link>
