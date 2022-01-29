@@ -88,7 +88,7 @@
   background-color: #fff;
 }
 .headerModal {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   z-index: 1;
   color: #fff;
@@ -111,10 +111,15 @@
 .mobileMenu ul {
   list-style: none;
   font-size: 20px;
-  padding: 0;
+  padding: 0 1rem;
+  margin: 0;
 }
 .mobileMenu li {
   border-top: 1px solid #fafafa;
+  padding: 0 1rem;
+}
+.mobileMenu ul > li:first-of-type {
+  border-top: none;
 }
 .mobileMenu li a {
   display: inline-block;
