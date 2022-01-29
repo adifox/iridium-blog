@@ -7,7 +7,7 @@ import Card from '../components/ui-components/card'
 // Styles
 import styles from '../styles/Home.module.css'
 
-const { container, main, grid } = styles
+const { articlesContainer, main, grid } = styles
 
 const Articles = ({ articles }) => {
   const allTheArticles = articles?.data?.stories
@@ -25,7 +25,7 @@ const Articles = ({ articles }) => {
           content='All the articles available on the Iridium Blog. By Szabolcs Lukacs'
         />
       </Head>
-      <main className={container}>
+      <main className={articlesContainer}>
         <div className={main}>
           <div className={grid}>{allTheArticles}</div>
         </div>

@@ -20,8 +20,10 @@ const Header = ({ greenColorHeader }) => {
     : styles.headerWrapper
 
   let headerStyles = headerWrapperStyles
+  let aboutStyles = styles.about
   if (router.pathname !== '/' || greenColorHeader) {
     headerStyles = styles.greenBackground
+    aboutStyles = styles.greenAbout
   }
 
   return (
@@ -40,12 +42,9 @@ const Header = ({ greenColorHeader }) => {
               <li className={styles.articles}>
                 <Link href='/articles'>Articles</Link>
               </li>
-              <li className={styles.about}>
+              <li className={aboutStyles}>
                 <Link href='/aboutme'>About me</Link>
               </li>
-              {/* <li>
-              <Link href='/iridium'>Why Iridium?</Link>
-            </li> */}
             </ul>
           </nav>
           <button

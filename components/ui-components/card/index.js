@@ -49,8 +49,8 @@ const Card = ({ story, subtitle }) => {
           </div>
           <div className={textContent}>
             <div className={cardMeta}>
-              <div className={tagsWrapper}>{articleTags}</div>
               <DateTag date={first_published_at} />
+              <div className={tagsWrapper}>{articleTags}</div>
             </div>
             <div className={titleWrapper}>
               <Heading title={title} level={'l2'} />
