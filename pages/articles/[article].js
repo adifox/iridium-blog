@@ -14,7 +14,7 @@ const {
 export const getStaticPaths = async () => {
   return {
     paths: [{ params: { article: 'welcome-to-my-blog' } }],
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
@@ -29,6 +29,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: { articleContent },
+    revalidate: 30,
   }
 }
 
