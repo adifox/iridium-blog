@@ -2,7 +2,7 @@ import StoryblokClient from 'storyblok-js-client'
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-  coche: {
+  cache: {
     clear: 'auto',
     type: 'memory',
   },
@@ -13,7 +13,13 @@ export const getCacheVersion = async () => {
 }
 
 export const getStoryblokData = async (url, options) => {
-  const data = await Storyblok.get(url, options)
+  const cacheVersion = await getCacheVersion()
+  const additionalFetchParams = {
+    ...options,
+    cv: cacheVersion.data.space.version,
+    version: process.env.STORYBLOK_VERSION,
+  }
+  const data = await Storyblok.get(url, additionalFetchParams)
   return data
 }
 
