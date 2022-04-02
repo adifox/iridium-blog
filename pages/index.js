@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getStoryblokData, getCacheVersion } from '../utils/storyblok'
+import { getStoryblokData } from '../utils/storyblok'
 
 // Components
 import Hero from '../components/hero-teaser'
@@ -47,11 +47,7 @@ const Home = ({ storyblokData, selectedArticles }) => {
 }
 
 export const getStaticProps = async (context) => {
-  const response = await getCacheVersion()
-  const storyblokData = await getStoryblokData('cdn/stories/home', {
-    cv: response.data.space.version,
-    version: 'published',
-  })
+  const storyblokData = await getStoryblokData('cdn/stories/home')
 
   let articleList = []
   storyblokData.data.story.content.body.forEach((bodyElement) =>
@@ -80,6 +76,7 @@ export const getStaticProps = async (context) => {
   // })
   return {
     props: { storyblokData, selectedArticles },
+    revalidate: 30,
   }
 }
 

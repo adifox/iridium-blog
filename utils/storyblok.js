@@ -12,7 +12,7 @@ export const getCacheVersion = async () => {
   return Storyblok.get('cdn/spaces/me', {})
 }
 
-export const getStoryblokData = async (url, options) => {
+export const getStoryblokData = async (url, options = {}) => {
   const cacheVersion = await getCacheVersion()
   const additionalFetchParams = {
     ...options,

@@ -29,7 +29,6 @@ export const getStaticProps = async (context) => {
 
   return {
     props: { articleContent },
-    revalidate: 30,
   }
 }
 
